@@ -38,7 +38,7 @@ def get_html_using_seleniumbase():
         return "No URL provided", 400
     
     try:
-        with SB() as sb:
+        with SB(uc=True, test=True) as sb:
             sb.open(url_param)
             html_content = sb.get_page_source()
             if is_raw:
